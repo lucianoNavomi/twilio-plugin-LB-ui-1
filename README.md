@@ -20,7 +20,25 @@ npm install
 In order to develop locally, you can use the Webpack Dev Server by running:
 
 ```bash
-npm start
+twilio flex:plugins:start
+
+ » Could not find profile.
+ » To create the profile, run:
+
+  twilio profiles:create
+
+Alternatively, twilio-cli can use credentials stored in environment variables:
+
+# OPTION 1 (recommended)
+export TWILIO_ACCOUNT_SID=your Account SID from twil.io/console
+export TWILIO_API_KEY=an API Key created at twil.io/get-api-key
+export TWILIO_API_SECRET=the secret for the API Key
+
+# OPTION 2
+export TWILIO_ACCOUNT_SID=your Account SID from twil.io/console
+export TWILIO_AUTH_TOKEN=your Auth Token from twil.io/console
+
+Once these environment variables are set, a twilio-cli profile is not required and you may skip the "login" step.
 ```
 
 This will automatically start up the Webpack Dev Server and open the browser for you. Your app will run on `http://localhost:3000`. If you want to change that you can do this by setting the `PORT` environment variable:
@@ -36,14 +54,23 @@ When you make changes to your code, the browser window will be automatically ref
 When you are ready to deploy your plugin, in your terminal run:
 
 ```bash
-npm run deploy
+twilio flex:plugins:deploy --major --changelog "Adding Bing as search engine" --description "First Plugin on Flex"
 ```
 
 This will publish your plugin as a Private Asset that is accessible by the Functions & Assets API. If you want to deploy your plugin as a Public Asset, you may pass --public to your deploy command:
 
 ```bash
-npm run deploy --public
+twilio flex:plugins:deploy --major  --public --changelog "Adding Bing as search engine" --description "First Plugin on Flex"
 ```
+
+## Release
+
+WInorder to enable your plugin, run:
+
+```bash
+twilio flex:plugins:release --name "First Plugin Release" --description "Enabling Plugin Sample"--plugin plugin-sample@1.0.0
+```
+
 
 For more details on deploying your plugin, refer to the [deploying your plugin guide](https://www.twilio.com/docs/flex/plugins#deploying-your-plugin).
 

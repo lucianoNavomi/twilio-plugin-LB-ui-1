@@ -3,8 +3,8 @@ import { default as styled } from 'react-emotion';
 export const LbTodoListTaskComponentStyles = styled('div')`
   padding: 0px;
   margin: 0px;
-  color: #fff;
-  background: #000;
+  // color: #fff;
+  // background: #000;
 
   h1 {
     font-size: 12px;
