@@ -65,10 +65,10 @@ twilio flex:plugins:deploy --major  --public --changelog "Adding Bing as search 
 
 ## Release
 
-WInorder to enable your plugin, run:
+Inorder to enable your plugin, run:
 
 ```bash
-twilio flex:plugins:release --name "First Plugin Release" --description "Enabling Plugin Sample"--plugin plugin-sample@1.0.0
+twilio flex:plugins:release --name "First Plugin Release" --description "Enabling Plugin Sample" --plugin plugin-sample@1.0.0
 ```
 
 
